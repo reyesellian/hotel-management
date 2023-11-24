@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from main import views
 
 from main.views import (
     home_screen_view,
@@ -25,4 +26,7 @@ from main.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', home_screen_view, name="index"),
+    path('update_status/<int:room_number>/<str:token>/', views.update_room_status, name='update_room_status'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+

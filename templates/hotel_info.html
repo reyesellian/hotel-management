@@ -1,0 +1,33 @@
+<!-- hotel_management/templates/hotel_management/hotel_info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Information</title>
+</head>
+<body>
+    <h1>Hotel Information</h1>
+
+    <h2>Hotels</h2>
+    <ul>
+        {% for hotel in hotels %}
+            <li>{{ hotel.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Amenities</h2>
+    <ul>
+        {% for amenity in amenities %}
+            <li>{{ amenity.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Entrance Fees</h2>
+    <ul>
+        {% for fee in entrance_fees %}
+            <li>{{ fee.amenity.name }} - ${{ fee.fee }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
