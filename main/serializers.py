@@ -1,4 +1,4 @@
-from rest_framework import serializers
+import serializers
 from .models import Amenitie, Room, StandardRoom, FamilyRoom, DeluxeRoom
 
 class RoomSerializer(serializers.ModelSerializer):
