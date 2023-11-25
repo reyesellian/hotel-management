@@ -21,8 +21,22 @@ from django.conf.urls.static import static
 
 from main.views import (
     home_screen_view,
+    about_screen_view,
+    contact_screen_view,
+    facility_screen_view,
+    qr_screen_view,
+    room_overview_screen_view,
+    rooms_category_screen_view,
+    shortcodes_screen_view,
 )
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', home_screen_view, name="index"),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path ('about/', about_screen_view, name="about"),
+    path ('contact/', contact_screen_view, name="contact"),
+    path ('facility/', facility_screen_view, name="facility"),
+    path ('qr/', qr_screen_view, name="qr"),
+    path ('rooms-overview/', room_overview_screen_view, name="rooms-overview"),
+    path ('category/', rooms_category_screen_view, name="category"),
+    path ('shortcodes/', shortcodes_screen_view, name="shortcodes"),
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
