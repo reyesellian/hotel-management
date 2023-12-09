@@ -22,11 +22,26 @@ from main import views
 
 from main.views import (
     home_screen_view,
+    about_screen_view,
+    contact_screen_view,
+    facility_screen_view,
+    qr_screen_view,
+    rooms_overview_screen_view,
+    rooms_category_screen_view,
+    shortcodes_screen_view,
 )
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('', home_screen_view, name="index"),
     path('update_status/<int:room_number>/<str:token>/', views.update_room_status, name='update_room_status'),
+    path ('', home_screen_view, name="index"),
+    path ('about/', about_screen_view, name="about"),
+    path ('contact/', contact_screen_view, name="contact"),
+    path ('facility/', facility_screen_view, name="facility"),
+    path ('qr/', qr_screen_view, name="qr"),
+    path ('rooms-category/', rooms_category_screen_view, name="rooms-category"),
+    path ('rooms-overview/', rooms_overview_screen_view, name="rooms-overview"),
+    path ('shortcodes/', shortcodes_screen_view, name="shortcodes"),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
